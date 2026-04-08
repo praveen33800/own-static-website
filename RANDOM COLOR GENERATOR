@@ -1,0 +1,87 @@
+Random Color Generator 
+
+let's build a Random Color Generator :
+              A simple and interactive Random Color Generator built using HTML, CSS, and JavaScript. This project allows users to generate random background colors with a single click, making it a fun way to explore color combinations.
+
+🚀 Features
+🎲 Generates a random color on button click
+🖱️ Easy-to-use interface
+🎨 Predefined set of vibrant colors
+📱 Responsive layout using Bootstrap
+⚡ Instant background color update
+
+HTML CODE:
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-6 d-flex flex-column justify-content-center">
+                <div class="text-center p-4">
+                    <h1 class="instruction">Click the below button to change color</h1>
+                    <button class="button" id="button">Click Me</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 bg-container" id="bgContainer"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+CSS CODE:
+
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+
+.instruction {
+    font-family: "Open Sans";
+}
+
+.button {
+    color: white;
+    background-color: #0967d2;
+    width: 150px;
+    height: 40px;
+    border-width: 0;
+    border-radius: 25px;
+    margin: 15px;
+}
+
+.bg-container {
+    height: 100vh;
+}
+
+JS CODE:
+
+let bgColorsArray = ["#e75d7c", "#b16cef", "#53cca4", "#efc84d", "#628ef0", "#184b73", "#883e7f", "#ed048b"];
+let buttonElement = document.getElementById("button");
+let bgContainerElement = document.getElementById("bgContainer");
+
+function onChangeBgColor() {
+    const randomIndex = Math.floor(Math.random() * bgColorsArray.length);
+    bgContainerElement.style.backgroundColor = bgColorsArray[randomIndex];
+
+}
+buttonElement.addEventListener('click', onChangeBgColor);
+bgContainerElement.style.backgroundColor = bgColorsArray[0];
+
+🛠️ Technologies Used
+HTML5 – Structure of the application
+CSS3 – Styling and layout
+JavaScript – Logic for random color selection
+Bootstrap 4 – Responsive design
+
+🎮 How It Works
+Click the "Click Me" button
+A random color is selected from the predefined array
+The background color of the container changes instantly
